@@ -118,3 +118,81 @@ output_data_file = "weather_data/cities.csv"
 city_data_df.to_csv(output_data_file, index_label="City_ID")
 
 # %%
+# Extract relevant fields from the DataFrame for plotting.
+lats = city_data_df["Lat"]
+max_temps = city_data_df["Max Temp"]
+humidity = city_data_df["Humidity"]
+cloudiness = city_data_df["Cloudiness"]
+wind_speed = city_data_df["Wind Speed"]
+
+# %%
+# import time dependency
+import time 
+
+# %%
+# Build the scatter plot for lats vs max temp
+plt.scatter(lats, max_temps, edgecolors="black", linewidths=1, marker="o", alpha=0.8, label="Cities")
+
+# Incorporate the other graph properties
+plt.title(f"City Latitude vs. Max Temperature "+ time.strftime("%x"))
+plt.ylabel("Max Temperature (F)")
+plt.xlabel("Latitude")
+plt.grid(True)
+
+# Save the figure.
+plt.savefig("weather_data/Fig1.png")
+
+# Show plot
+plt.show()
+
+
+# %%
+# Build the scatter plot for lats vs humidity
+plt.scatter(lats, humidity, edgecolors="black", linewidths=1, marker="o", alpha=0.8, label="Cities")
+
+# Incorporate the other graph properties
+plt.title(f"City Latitude vs. Humidity "+ time.strftime("%x"))
+plt.ylabel("Humidity (%)")
+plt.xlabel("Latitude")
+plt.grid(True)
+
+# Save the figure.
+plt.savefig("weather_data/Fig2.png")
+
+# Show plot
+plt.show()
+
+
+# %%
+# Build the scatter plot for lats vs cloudiness
+plt.scatter(lats, cloudiness, edgecolors="black", linewidths=1, marker="o", alpha=0.8, label="Cities")
+
+# Incorporate the other graph properties
+plt.title(f"City Latitude vs. Cloudiness "+ time.strftime("%x"))
+plt.ylabel("Cloudiness (%)")
+plt.xlabel("Latitude")
+plt.grid(True)
+
+# Save the figure.
+plt.savefig("weather_data/Fig3.png")
+
+# Show plot
+plt.show()
+
+# %%
+# Build the scatter plot for lats vs wind speed
+plt.scatter(lats, humidity, edgecolors="black", linewidths=1, marker="o", alpha=0.8, label="Cities")
+
+# Incorporate the other graph properties
+plt.title(f"City Latitude vs. Wind Speed "+ time.strftime("%x"))
+plt.ylabel("Wind Speed (mph)")
+plt.xlabel("Latitude")
+plt.grid(True)
+
+# Save the figure.
+plt.savefig("weather_data/Fig4.png")
+
+# Show plot
+plt.show()
+
+# %%
